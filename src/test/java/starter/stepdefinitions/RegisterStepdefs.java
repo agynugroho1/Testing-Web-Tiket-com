@@ -33,7 +33,34 @@ public class RegisterStepdefs {
             case "register":
                 registerPage.inputFieldRegister(value);
                 break;
+            case "first name":
+                registerPage.inputFieldFristName(value);
+                break;
+            case "last name":
+                registerPage.inputFieldLastName(value);
+                break;
+            case "number phone":
+                registerPage.inputFieldNumberPhone(value);
+                break;
+            case "password":
+                registerPage.inputFieldPassword(value);
+                break;
             default:
         }
+    }
+
+    @And("User click {string} button")
+    public void userClickButton(String value) {
+        if (value.equalsIgnoreCase("buat akun")){
+            registerPage.buatAkun();
+        } else {
+            registerPage.clickButton(value);
+        }
+    }
+
+    @And("User choose title {string}")
+    public void userChooseTitle(String title) {
+        registerPage.clickArrow();
+        registerPage.clickTitle(title);
     }
 }
