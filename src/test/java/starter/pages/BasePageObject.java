@@ -39,6 +39,7 @@ public class BasePageObject extends PageObject {
     }
 
     public boolean isPresent(By element) {
+        waitUntil(ExpectedConditions.visibilityOfElementLocated(element), timeout);
         return getDriver().findElement(element).isDisplayed();
     }
 
