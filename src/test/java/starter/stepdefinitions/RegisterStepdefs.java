@@ -2,6 +2,7 @@ package starter.stepdefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import starter.pages.page_object.HomePage;
@@ -62,5 +63,10 @@ public class RegisterStepdefs {
     public void userChooseTitle(String title) {
         registerPage.clickArrow();
         registerPage.clickTitle(title);
+    }
+
+    @Then("Entry OTP page appear")
+    public void entryOTPPageAppear() {
+        registerPage.verifyEntryOTPPage();
     }
 }
