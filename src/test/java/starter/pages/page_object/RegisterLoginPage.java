@@ -7,7 +7,7 @@ import starter.pages.BasePageObject;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class RegisterPage extends BasePageObject {
+public class RegisterLoginPage extends BasePageObject {
     public void inputFieldRegister(String value){
         By element = By.xpath("//body/div[@id='app']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/input[1]");
         typeOn(element, value);
@@ -45,6 +45,16 @@ public class RegisterPage extends BasePageObject {
 
     public void inputFieldPassword(String value){
         By element = By.xpath("//body/div[@id='app']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/input[1]");
+        typeOn(element, value);
+    }
+
+    public void inputFieldEmail(String value){
+        By element = By.xpath("//body/div[@id='app']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/input[1]");
+        typeOn(element, value);
+    }
+
+    public void inputFieldPasswordLogin(String value){
+        By element = By.xpath("//body/div[@id='app']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/input[1]");
         typeOn(element, value);
     }
 

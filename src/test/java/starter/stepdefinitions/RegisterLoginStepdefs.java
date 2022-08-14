@@ -4,14 +4,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.thucydides.core.annotations.Steps;
 import starter.pages.page_object.HomePage;
-import starter.pages.page_object.RegisterPage;
+import starter.pages.page_object.RegisterLoginPage;
 
-public class RegisterStepdefs {
+public class RegisterLoginStepdefs {
 
     HomePage homePage = new HomePage();
-    RegisterPage registerPage = new RegisterPage();
+    RegisterLoginPage registerPage = new RegisterLoginPage();
 
     @Given("User already on home page")
     public void userAlreadyOnHomePage() {
@@ -22,6 +21,9 @@ public class RegisterStepdefs {
     public void userClickMenu(String menus) {
         switch (menus.toLowerCase()){
             case "daftar" :
+                homePage.clickButtonDaftar();
+                break;
+            case "masuk" :
                 homePage.clickButtonDaftar();
                 break;
             default:
@@ -45,6 +47,12 @@ public class RegisterStepdefs {
                 break;
             case "password":
                 registerPage.inputFieldPassword(value);
+                break;
+            case "email" :
+                registerPage.inputFieldEmail(value);
+                break;
+            case "password login" :
+                registerPage.inputFieldPasswordLogin(value);
                 break;
             default:
         }
